@@ -31,6 +31,8 @@ public class Main extends Application {
 		}else{
 			loc=up.get(0);
 		}
+		if(loc.startsWith("\"")&&loc.endsWith("\""))
+			loc=loc.substring(1,loc.length()-1);
 		if(!loc.startsWith("file:")&&!loc.startsWith("http:")&&!loc.startsWith("https:"))
 			loc=java.nio.file.Paths.get(loc).toUri().toString();
 		if(jso){
